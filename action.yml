@@ -2,11 +2,17 @@ name: "Zola Deploy"
 author: "st1020"
 description: "Build a Zola site and upload pages artifact"
 
+inputs:
+  version:
+    description: "Zola version to use"
+    required: true
+    default: "v0.19.1"
+
 runs:
   using: "composite"
   steps:
     - run: 'wget -q -O -
-        "https://github.com/getzola/zola/releases/download/v0.18.0/zola-v0.18.0-x86_64-unknown-linux-gnu.tar.gz"
+        "https://github.com/getzola/zola/releases/download/${{ inputs.version }}/zola-${{ inputs.version }}-x86_64-unknown-linux-gnu.tar.gz"
         | tar xzf - -C /usr/local/bin'
       shell: bash
 

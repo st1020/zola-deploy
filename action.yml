@@ -5,8 +5,8 @@ description: "Build a Zola site and upload pages artifact"
 inputs:
   version:
     description: "Zola version to use"
-    required: true
-    default: "v0.19.1"
+    required: false
+    default: "v0.20.0"
 
 runs:
   using: "composite"
